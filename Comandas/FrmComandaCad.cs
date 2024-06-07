@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,28 @@ namespace Comandas
         public FrmComandaCad()
         {
             InitializeComponent();
+        }
+
+        //evento de clique
+        private void btnCardapio_Click(object sender, EventArgs e)
+        {
+            //cria o formulario e exibe
+            new FrmCardapio().ShowDialog();
+        }
+
+        private void btnComanda_Click_1(object sender, EventArgs e)
+        {
+            new FrmComanda().ShowDialog();
+        }
+
+        private void btnPedidoCozinha_Click(object sender, EventArgs e)
+        {
+            new FrmPedidoCozinha().ShowDialog();
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
