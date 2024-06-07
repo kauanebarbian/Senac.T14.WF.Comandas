@@ -3,12 +3,12 @@
     partial class FrmPrincipal
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,89 +23,157 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            airButton1 = new ReaLTaiizor.Controls.AirButton();
-            airButton2 = new ReaLTaiizor.Controls.AirButton();
-            airButton3 = new ReaLTaiizor.Controls.AirButton();
-            airButton4 = new ReaLTaiizor.Controls.AirButton();
+            gpxPrincipal = new GroupBox();
+            btnUsuario = new ReaLTaiizor.Controls.MetroButton();
+            btnPedidoCozinha = new ReaLTaiizor.Controls.MetroButton();
+            btnComanda = new ReaLTaiizor.Controls.MetroButton();
+            btnCardapio = new ReaLTaiizor.Controls.MetroButton();
+            gpxPrincipal.SuspendLayout();
             SuspendLayout();
             // 
-            // airButton1
+            // gpxPrincipal
             // 
-            airButton1.Customization = "7e3t//Ly8v/r6+v/5ubm/+vr6//f39//p6en/zw8PP8UFBT/gICA/w==";
-            airButton1.Font = new Font("Segoe UI", 9F);
-            airButton1.Image = null;
-            airButton1.Location = new Point(54, 146);
-            airButton1.Name = "airButton1";
-            airButton1.NoRounding = false;
-            airButton1.Size = new Size(150, 129);
-            airButton1.TabIndex = 0;
-            airButton1.Text = "airButton1";
-            airButton1.Transparent = false;
+            gpxPrincipal.Controls.Add(btnUsuario);
+            gpxPrincipal.Controls.Add(btnPedidoCozinha);
+            gpxPrincipal.Controls.Add(btnComanda);
+            gpxPrincipal.Controls.Add(btnCardapio);
+            gpxPrincipal.Location = new Point(12, 55);
+            gpxPrincipal.Name = "gpxPrincipal";
+            gpxPrincipal.Size = new Size(764, 303);
+            gpxPrincipal.TabIndex = 0;
+            gpxPrincipal.TabStop = false;
             // 
-            // airButton2
+            // btnUsuario
             // 
-            airButton2.Customization = "7e3t//Ly8v/r6+v/5ubm/+vr6//f39//p6en/zw8PP8UFBT/gICA/w==";
-            airButton2.Font = new Font("Segoe UI", 9F);
-            airButton2.Image = null;
-            airButton2.Location = new Point(231, 146);
-            airButton2.Name = "airButton2";
-            airButton2.NoRounding = false;
-            airButton2.Size = new Size(150, 129);
-            airButton2.TabIndex = 1;
-            airButton2.Text = "airButton2";
-            airButton2.Transparent = false;
+            btnUsuario.DisabledBackColor = Color.FromArgb(120, 65, 177, 225);
+            btnUsuario.DisabledBorderColor = Color.FromArgb(120, 65, 177, 225);
+            btnUsuario.DisabledForeColor = Color.Gray;
+            btnUsuario.Font = new Font("Microsoft Sans Serif", 10F);
+            btnUsuario.HoverBorderColor = Color.FromArgb(95, 207, 255);
+            btnUsuario.HoverColor = Color.FromArgb(95, 207, 255);
+            btnUsuario.HoverTextColor = Color.White;
+            btnUsuario.IsDerivedStyle = true;
+            btnUsuario.Location = new Point(546, 51);
+            btnUsuario.Name = "btnUsuario";
+            btnUsuario.NormalBorderColor = Color.FromArgb(65, 177, 225);
+            btnUsuario.NormalColor = Color.FromArgb(65, 177, 225);
+            btnUsuario.NormalTextColor = Color.White;
+            btnUsuario.PressBorderColor = Color.FromArgb(35, 147, 195);
+            btnUsuario.PressColor = Color.FromArgb(35, 147, 195);
+            btnUsuario.PressTextColor = Color.White;
+            btnUsuario.Size = new Size(143, 128);
+            btnUsuario.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            btnUsuario.StyleManager = null;
+            btnUsuario.TabIndex = 3;
+            btnUsuario.Text = "Usuários";
+            btnUsuario.ThemeAuthor = "Taiizor";
+            btnUsuario.ThemeName = "MetroLight";
+            btnUsuario.Click += btnUsuarios_Click;
             // 
-            // airButton3
+            // btnPedidoCozinha
             // 
-            airButton3.Customization = "7e3t//Ly8v/r6+v/5ubm/+vr6//f39//p6en/zw8PP8UFBT/gICA/w==";
-            airButton3.Font = new Font("Segoe UI", 9F);
-            airButton3.Image = null;
-            airButton3.Location = new Point(422, 146);
-            airButton3.Name = "airButton3";
-            airButton3.NoRounding = false;
-            airButton3.Size = new Size(150, 129);
-            airButton3.TabIndex = 2;
-            airButton3.Text = "airButton3";
-            airButton3.Transparent = false;
+            btnPedidoCozinha.DisabledBackColor = Color.FromArgb(120, 65, 177, 225);
+            btnPedidoCozinha.DisabledBorderColor = Color.FromArgb(120, 65, 177, 225);
+            btnPedidoCozinha.DisabledForeColor = Color.Gray;
+            btnPedidoCozinha.Font = new Font("Microsoft Sans Serif", 10F);
+            btnPedidoCozinha.HoverBorderColor = Color.FromArgb(95, 207, 255);
+            btnPedidoCozinha.HoverColor = Color.FromArgb(95, 207, 255);
+            btnPedidoCozinha.HoverTextColor = Color.White;
+            btnPedidoCozinha.IsDerivedStyle = true;
+            btnPedidoCozinha.Location = new Point(374, 51);
+            btnPedidoCozinha.Name = "btnPedidoCozinha";
+            btnPedidoCozinha.NormalBorderColor = Color.FromArgb(65, 177, 225);
+            btnPedidoCozinha.NormalColor = Color.FromArgb(65, 177, 225);
+            btnPedidoCozinha.NormalTextColor = Color.White;
+            btnPedidoCozinha.PressBorderColor = Color.FromArgb(35, 147, 195);
+            btnPedidoCozinha.PressColor = Color.FromArgb(35, 147, 195);
+            btnPedidoCozinha.PressTextColor = Color.White;
+            btnPedidoCozinha.Size = new Size(143, 128);
+            btnPedidoCozinha.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            btnPedidoCozinha.StyleManager = null;
+            btnPedidoCozinha.TabIndex = 2;
+            btnPedidoCozinha.Text = "Pedido Cozinha";
+            btnPedidoCozinha.ThemeAuthor = "Taiizor";
+            btnPedidoCozinha.ThemeName = "MetroLight";
+            btnPedidoCozinha.Click += btnPedidoCozinha_Click;
             // 
-            // airButton4
+            // btnComanda
             // 
-            airButton4.Customization = "7e3t//Ly8v/r6+v/5ubm/+vr6//f39//p6en/zw8PP8UFBT/gICA/w==";
-            airButton4.Font = new Font("Segoe UI", 9F);
-            airButton4.Image = null;
-            airButton4.Location = new Point(611, 146);
-            airButton4.Name = "airButton4";
-            airButton4.NoRounding = false;
-            airButton4.Size = new Size(150, 129);
-            airButton4.TabIndex = 3;
-            airButton4.Text = "airButton4";
-            airButton4.Transparent = false;
+            btnComanda.DisabledBackColor = Color.FromArgb(120, 65, 177, 225);
+            btnComanda.DisabledBorderColor = Color.FromArgb(120, 65, 177, 225);
+            btnComanda.DisabledForeColor = Color.Gray;
+            btnComanda.Font = new Font("Microsoft Sans Serif", 10F);
+            btnComanda.HoverBorderColor = Color.FromArgb(95, 207, 255);
+            btnComanda.HoverColor = Color.FromArgb(95, 207, 255);
+            btnComanda.HoverTextColor = Color.White;
+            btnComanda.IsDerivedStyle = true;
+            btnComanda.Location = new Point(204, 51);
+            btnComanda.Name = "btnComanda";
+            btnComanda.NormalBorderColor = Color.FromArgb(65, 177, 225);
+            btnComanda.NormalColor = Color.FromArgb(65, 177, 225);
+            btnComanda.NormalTextColor = Color.White;
+            btnComanda.PressBorderColor = Color.FromArgb(35, 147, 195);
+            btnComanda.PressColor = Color.FromArgb(35, 147, 195);
+            btnComanda.PressTextColor = Color.White;
+            btnComanda.Size = new Size(143, 128);
+            btnComanda.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            btnComanda.StyleManager = null;
+            btnComanda.TabIndex = 1;
+            btnComanda.Text = "Comanda";
+            btnComanda.ThemeAuthor = "Taiizor";
+            btnComanda.ThemeName = "MetroLight";
+            btnComanda.Click += btnComanda_Click_1;
+            // 
+            // btnCardapio
+            // 
+            btnCardapio.DisabledBackColor = Color.FromArgb(120, 65, 177, 225);
+            btnCardapio.DisabledBorderColor = Color.FromArgb(120, 65, 177, 225);
+            btnCardapio.DisabledForeColor = Color.Gray;
+            btnCardapio.Font = new Font("Microsoft Sans Serif", 10F);
+            btnCardapio.HoverBorderColor = Color.FromArgb(95, 207, 255);
+            btnCardapio.HoverColor = Color.FromArgb(95, 207, 255);
+            btnCardapio.HoverTextColor = Color.White;
+            btnCardapio.IsDerivedStyle = true;
+            btnCardapio.Location = new Point(34, 51);
+            btnCardapio.Name = "btnCardapio";
+            btnCardapio.NormalBorderColor = Color.FromArgb(65, 177, 225);
+            btnCardapio.NormalColor = Color.FromArgb(65, 177, 225);
+            btnCardapio.NormalTextColor = Color.White;
+            btnCardapio.PressBorderColor = Color.FromArgb(35, 147, 195);
+            btnCardapio.PressColor = Color.FromArgb(35, 147, 195);
+            btnCardapio.PressTextColor = Color.White;
+            btnCardapio.Size = new Size(143, 128);
+            btnCardapio.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            btnCardapio.StyleManager = null;
+            btnCardapio.TabIndex = 0;
+            btnCardapio.Text = "Cardápio";
+            btnCardapio.ThemeAuthor = "Taiizor";
+            btnCardapio.ThemeName = "MetroLight";
+            btnCardapio.Click += btnCardapio_Click;
             // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(airButton4);
-            Controls.Add(airButton3);
-            Controls.Add(airButton2);
-            Controls.Add(airButton1);
+            Controls.Add(gpxPrincipal);
             Name = "FrmPrincipal";
-            Text = "Form1";
+            Text = "Principal";
+            gpxPrincipal.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-
-        private ReaLTaiizor.Controls.AirButton airButton1;
-        private ReaLTaiizor.Controls.AirButton airButton2;
-        private ReaLTaiizor.Controls.AirButton airButton3;
-        private ReaLTaiizor.Controls.AirButton airButton4;
+        private GroupBox gpxPrincipal;
+        private ReaLTaiizor.Controls.MetroButton btnUsuario;
+        private ReaLTaiizor.Controls.MetroButton btnPedidoCozinha;
+        private ReaLTaiizor.Controls.MetroButton btnComanda;
+        private ReaLTaiizor.Controls.MetroButton btnCardapio;
     }
 }
