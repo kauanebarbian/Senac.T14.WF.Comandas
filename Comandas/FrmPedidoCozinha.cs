@@ -16,5 +16,10 @@ namespace Comandas
         {
             InitializeComponent();
         }
+
+        private void cyberButton1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

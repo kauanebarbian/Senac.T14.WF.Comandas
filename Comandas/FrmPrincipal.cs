@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,20 @@ namespace Comandas
         public FrmPrincipal()
         {
             InitializeComponent();
+            CriarBancoDeDados();
+        }
+
+        // método (visibilidade= private, retrono=void no
+        private void CriarBancoDeDados()
+        {
+            // criar uma variavel do tipo AppDbContext
+            // usar a variavel e acessar o contexto
+            // executar a migração == F5
+            using (var banco = new AppDbContext())
+            {
+                //executa a migração(CREATE TABLE usuarios)
+                banco.Database.Migrate();
+            }
         }
 
         //evento de clique
@@ -38,6 +53,16 @@ namespace Comandas
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             new FrmUsuario().ShowDialog();
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

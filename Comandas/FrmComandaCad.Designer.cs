@@ -32,6 +32,7 @@
             airButton2 = new ReaLTaiizor.Controls.AirButton();
             airButton3 = new ReaLTaiizor.Controls.AirButton();
             airButton4 = new ReaLTaiizor.Controls.AirButton();
+            btnVoltar = new ReaLTaiizor.Controls.CyberButton();
             SuspendLayout();
             // 
             // airButton1
@@ -87,16 +88,60 @@
             airButton4.Text = "airButton4";
             airButton4.Transparent = false;
             // 
-            // FrmPrincipal
+            // btnVoltar
+            // 
+            btnVoltar.Alpha = 20;
+            btnVoltar.BackColor = Color.Transparent;
+            btnVoltar.Background = true;
+            btnVoltar.Background_WidthPen = 4F;
+            btnVoltar.BackgroundPen = true;
+            btnVoltar.ColorBackground = Color.FromArgb(37, 52, 68);
+            btnVoltar.ColorBackground_1 = Color.FromArgb(37, 52, 68);
+            btnVoltar.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            btnVoltar.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
+            btnVoltar.ColorLighting = Color.FromArgb(29, 200, 238);
+            btnVoltar.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            btnVoltar.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnVoltar.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnVoltar.Effect_1 = true;
+            btnVoltar.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnVoltar.Effect_1_Transparency = 25;
+            btnVoltar.Effect_2 = true;
+            btnVoltar.Effect_2_ColorBackground = Color.White;
+            btnVoltar.Effect_2_Transparency = 20;
+            btnVoltar.Font = new Font("Arial", 11F);
+            btnVoltar.ForeColor = Color.FromArgb(245, 245, 245);
+            btnVoltar.Lighting = false;
+            btnVoltar.LinearGradient_Background = false;
+            btnVoltar.LinearGradientPen = false;
+            btnVoltar.Location = new Point(27, 349);
+            btnVoltar.Name = "btnVoltar";
+            btnVoltar.PenWidth = 15;
+            btnVoltar.Rounding = true;
+            btnVoltar.RoundingInt = 70;
+            btnVoltar.Size = new Size(195, 75);
+            btnVoltar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnVoltar.TabIndex = 4;
+            btnVoltar.Tag = "Cyber";
+            btnVoltar.TextButton = "Sair";
+            btnVoltar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnVoltar.Timer_Effect_1 = 5;
+            btnVoltar.Timer_RGB = 300;
+            btnVoltar.Click += btnVoltar_Click;
+            // 
+            // FrmComandaCad
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnVoltar);
             Controls.Add(airButton4);
             Controls.Add(airButton3);
             Controls.Add(airButton2);
             Controls.Add(airButton1);
-            Name = "FrmPrincipal";
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "FrmComandaCad";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             ResumeLayout(false);
         }
@@ -108,5 +153,6 @@
         private ReaLTaiizor.Controls.AirButton airButton2;
         private ReaLTaiizor.Controls.AirButton airButton3;
         private ReaLTaiizor.Controls.AirButton airButton4;
+        private ReaLTaiizor.Controls.CyberButton btnVoltar;
     }
 }
