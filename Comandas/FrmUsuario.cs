@@ -42,12 +42,14 @@ namespace Comandas
         {
             using (var banco = new AppDbContext())
             {
+                //consulta usuario na tabela usando o Id da tela
                 var usuario = banco
                     .Usuarios
-                    .Where(e => e.Id == 1)
+                    .Where(e => e.Id == int.Parse(txtId.TextButton))
                     .FirstOrDefault();
-                usuario.Nome = "Eduarda";
-                usuario.Email = "eduarda@gmail.com";
+                usuario.Nome = txtNome.TextButton;
+                usuario.Email = txtEmail.TextButton;
+                usuario.Senha = txtSenha.TextButton;
                 banco.SaveChanges();
             }
 
@@ -63,9 +65,9 @@ namespace Comandas
             {
                 //criar variavel
                 var novoUsuario = new Usuario();
-                novoUsuario.Nome = "Kauane";
-                novoUsuario.Email = "kauanebarbian@gmail.com";
-                novoUsuario.Senha = "123";
+                novoUsuario.Nome = txtNome.TextButton;
+                novoUsuario.Email = txtEmail.TextButton;
+                novoUsuario.Senha = txtSenha.TextButton;
                 //salvar as alterãções(INSERT INTO usuarios)
                 banco.Usuarios.Add(novoUsuario);
                 banco.SaveChanges();
