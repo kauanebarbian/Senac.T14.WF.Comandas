@@ -42,7 +42,10 @@
             txtSenha = new ReaLTaiizor.Controls.CyberRichTextBox();
             txtEmail = new ReaLTaiizor.Controls.CyberRichTextBox();
             txtNome = new ReaLTaiizor.Controls.CyberRichTextBox();
+            dgvUsuarios = new DataGridView();
+            btnEditar = new ReaLTaiizor.Controls.CyberButton();
             cyberGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             SuspendLayout();
             // 
             // btnSair
@@ -71,7 +74,7 @@
             btnSair.Lighting = false;
             btnSair.LinearGradient_Background = false;
             btnSair.LinearGradientPen = false;
-            btnSair.Location = new Point(12, 454);
+            btnSair.Location = new Point(2, 651);
             btnSair.Name = "btnSair";
             btnSair.PenWidth = 15;
             btnSair.Rounding = true;
@@ -112,12 +115,12 @@
             btnNovo.Lighting = false;
             btnNovo.LinearGradient_Background = false;
             btnNovo.LinearGradientPen = false;
-            btnNovo.Location = new Point(12, 305);
+            btnNovo.Location = new Point(72, 309);
             btnNovo.Name = "btnNovo";
             btnNovo.PenWidth = 15;
             btnNovo.Rounding = true;
             btnNovo.RoundingInt = 70;
-            btnNovo.Size = new Size(195, 75);
+            btnNovo.Size = new Size(147, 75);
             btnNovo.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             btnNovo.TabIndex = 1;
             btnNovo.Tag = "Cyber";
@@ -153,12 +156,12 @@
             btnSalvar.Lighting = false;
             btnSalvar.LinearGradient_Background = false;
             btnSalvar.LinearGradientPen = false;
-            btnSalvar.Location = new Point(213, 305);
+            btnSalvar.Location = new Point(225, 309);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.PenWidth = 15;
             btnSalvar.Rounding = true;
             btnSalvar.RoundingInt = 70;
-            btnSalvar.Size = new Size(195, 75);
+            btnSalvar.Size = new Size(147, 75);
             btnSalvar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             btnSalvar.TabIndex = 2;
             btnSalvar.Tag = "Cyber";
@@ -194,12 +197,12 @@
             btnExcluir.Lighting = false;
             btnExcluir.LinearGradient_Background = false;
             btnExcluir.LinearGradientPen = false;
-            btnExcluir.Location = new Point(626, 305);
+            btnExcluir.Location = new Point(684, 309);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.PenWidth = 15;
             btnExcluir.Rounding = true;
             btnExcluir.RoundingInt = 70;
-            btnExcluir.Size = new Size(195, 75);
+            btnExcluir.Size = new Size(147, 75);
             btnExcluir.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             btnExcluir.TabIndex = 3;
             btnExcluir.Tag = "Cyber";
@@ -234,12 +237,12 @@
             btnCancelar.Lighting = false;
             btnCancelar.LinearGradient_Background = false;
             btnCancelar.LinearGradientPen = false;
-            btnCancelar.Location = new Point(414, 305);
+            btnCancelar.Location = new Point(531, 309);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.PenWidth = 15;
             btnCancelar.Rounding = true;
             btnCancelar.RoundingInt = 70;
-            btnCancelar.Size = new Size(195, 75);
+            btnCancelar.Size = new Size(147, 75);
             btnCancelar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             btnCancelar.TabIndex = 4;
             btnCancelar.Tag = "Cyber";
@@ -247,6 +250,7 @@
             btnCancelar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnCancelar.Timer_Effect_1 = 5;
             btnCancelar.Timer_RGB = 300;
+            btnCancelar.Click += btnCancelar_Click_1;
             // 
             // cyberGroupBox1
             // 
@@ -449,11 +453,63 @@
             txtNome.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             txtNome.Timer_RGB = 300;
             // 
+            // dgvUsuarios
+            // 
+            dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsuarios.Location = new Point(12, 407);
+            dgvUsuarios.Name = "dgvUsuarios";
+            dgvUsuarios.RowHeadersWidth = 62;
+            dgvUsuarios.Size = new Size(900, 238);
+            dgvUsuarios.TabIndex = 6;
+            // 
+            // btnEditar
+            // 
+            btnEditar.Alpha = 20;
+            btnEditar.BackColor = Color.Transparent;
+            btnEditar.Background = true;
+            btnEditar.Background_WidthPen = 4F;
+            btnEditar.BackgroundPen = true;
+            btnEditar.ColorBackground = Color.FromArgb(37, 52, 68);
+            btnEditar.ColorBackground_1 = Color.FromArgb(37, 52, 68);
+            btnEditar.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            btnEditar.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
+            btnEditar.ColorLighting = Color.FromArgb(29, 200, 238);
+            btnEditar.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            btnEditar.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnEditar.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnEditar.Effect_1 = true;
+            btnEditar.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnEditar.Effect_1_Transparency = 25;
+            btnEditar.Effect_2 = true;
+            btnEditar.Effect_2_ColorBackground = Color.White;
+            btnEditar.Effect_2_Transparency = 20;
+            btnEditar.Font = new Font("Arial", 11F);
+            btnEditar.ForeColor = Color.FromArgb(245, 245, 245);
+            btnEditar.Lighting = false;
+            btnEditar.LinearGradient_Background = false;
+            btnEditar.LinearGradientPen = false;
+            btnEditar.Location = new Point(378, 309);
+            btnEditar.Name = "btnEditar";
+            btnEditar.PenWidth = 15;
+            btnEditar.Rounding = true;
+            btnEditar.RoundingInt = 70;
+            btnEditar.Size = new Size(147, 75);
+            btnEditar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnEditar.TabIndex = 7;
+            btnEditar.Tag = "Cyber";
+            btnEditar.TextButton = "Editar";
+            btnEditar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnEditar.Timer_Effect_1 = 5;
+            btnEditar.Timer_RGB = 300;
+            btnEditar.Click += btnEditar_Click;
+            // 
             // FrmUsuario
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(924, 541);
+            ClientSize = new Size(924, 738);
+            Controls.Add(btnEditar);
+            Controls.Add(dgvUsuarios);
             Controls.Add(btnCancelar);
             Controls.Add(btnSair);
             Controls.Add(btnExcluir);
@@ -465,6 +521,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmUsuario";
             cyberGroupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             ResumeLayout(false);
         }
 
@@ -484,5 +541,7 @@
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel1;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel3;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel2;
+        private DataGridView dgvUsuarios;
+        private ReaLTaiizor.Controls.CyberButton btnEditar;
     }
 }

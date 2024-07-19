@@ -18,6 +18,21 @@ namespace Comandas
         public FrmUsuario()
         {
             InitializeComponent();
+            //metodo que lista os usuarios
+            ListarUsuarios();
+        }
+
+        private void ListarUsuarios()
+        {
+            //1.conectar no banco
+            using (var banco = new AppDbContext())
+            {
+                //2.SELECT * FROM usuarios
+                var usuarios = banco.Usuarios.ToList();
+                //3.popular a tabela na tela DataGridView
+                dgvUsuarios.DataSource = usuarios;
+
+            }
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -31,11 +46,18 @@ namespace Comandas
                 CriarUsuario();
             else
                 AtualizarUsuario();
-            //metodo que ira inserir usuario no banco
-            CriarUsuario();
 
-            //AtualizarUsuario();
-            AtualizarUsuario();
+            DesabilitarCampos();
+            ListarUsuarios();
+            LimparCampos();
+        }
+
+        private void LimparCampos()
+        {
+            txtId.TextButton = string.Empty;
+            txtNome.TextButton = string.Empty;
+            txtEmail.TextButton = string.Empty;
+            txtSenha.TextButton = string.Empty;
         }
 
         private void AtualizarUsuario()
@@ -83,6 +105,40 @@ namespace Comandas
         private void btnNovo_Click(object sender, EventArgs e)
         {
             ehNovo = true;
+            HabilitarCampos();
+        }
+
+        private void HabilitarCampos()
+        {
+            txtNome.Enabled = true;
+            txtEmail.Enabled = true;
+            txtSenha.Enabled = true;
+        }
+        private void DesabilitarCampos()
+        {
+            txtNome.Enabled = false;
+            txtEmail.Enabled = false;
+            txtSenha.Enabled = false;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNome_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            ehNovo = false;
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
