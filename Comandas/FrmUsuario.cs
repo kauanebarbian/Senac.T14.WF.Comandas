@@ -64,6 +64,8 @@ namespace Comandas
         {
             using (var banco = new AppDbContext())
             {
+                var id = int.Parse(txtId.TextButton);
+
                 //consulta usuario na tabela usando o Id da tela
                 var usuario = banco
                     .Usuarios
@@ -134,9 +136,54 @@ namespace Comandas
         private void btnEditar_Click(object sender, EventArgs e)
         {
             ehNovo = false;
+            HabilitarCampos();
         }
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmUsuario_Load(object sender, EventArgs e)
+        {
+            CarregarUsuarios();
+        }
+
+        private void CarregarUsuarios()
+        {
+            //conectar no banco 
+            using (var banco = new AppDbContext())
+            {
+                //Realizar consulta na tabela usuarios
+                var usuarios = banco.Usuarios.ToList();
+                //popular os dados do grid()
+                dgvUsuarios.DataSource = usuarios;
+            }
+        }
+
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //verifica se o indice da linha é maior ou igual a 0 
+            //saber se existe uma linha selecionada
+            if (e.RowIndex >= 0)
+            {
+                //mensage "Linha selecionada 1"
+                //MessageBox.Show("Linha selecionada" + (e.RowIndex + 1));
+
+                //obter dados da linha
+                var id = dgvUsuarios.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                var nome = dgvUsuarios.Rows[e.RowIndex].Cells["Nome"].Value.ToString();
+                var email = dgvUsuarios.Rows[e.RowIndex].Cells["Email"].Value.ToString();
+                var senha = dgvUsuarios.Rows[e.RowIndex].Cells["Senha"].Value.ToString();
+
+                txtId.TextButton = id;
+                txtNome.TextButton = nome;
+                txtEmail.TextButton = email;
+                txtSenha.TextButton = senha;
+            }
+        }
+
+        private void txtNome_Click(object sender, EventArgs e)
         {
 
         }
