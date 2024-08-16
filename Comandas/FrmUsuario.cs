@@ -50,6 +50,11 @@ namespace Comandas
             DesabilitarCampos();
             ListarUsuarios();
             LimparCampos();
+            btnNovo.Enabled = true;
+            btnEditar.Enabled = false;
+            btnSalvar.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnCancelar.Enabled = false;
         }
 
         private void LimparCampos()
@@ -137,11 +142,21 @@ namespace Comandas
         {
             ehNovo = false;
             HabilitarCampos();
+            btnNovo.Enabled = false;
+            btnEditar.Enabled = false;
+            btnSalvar.Enabled = true;
+            btnExcluir.Enabled = false;
+            btnCancelar.Enabled = false;
         }
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
-
+            LimparCampos();
+            btnNovo.Enabled = true;
+            btnEditar.Enabled = false;
+            btnSalvar.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnCancelar.Enabled = false;
         }
 
         private void FrmUsuario_Load(object sender, EventArgs e)
@@ -180,12 +195,47 @@ namespace Comandas
                 txtNome.TextButton = nome;
                 txtEmail.TextButton = email;
                 txtSenha.TextButton = senha;
+
+                btnEditar.Enabled = true;
+                btnNovo.Enabled = false;
+                btnSalvar.Enabled = false;
+                btnCancelar.Enabled = false;
+                btnExcluir.Enabled = true;
             }
         }
 
         private void txtNome_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            //obtem o id do usuario da tela 
+            var idUsuario = Convert.ToInt32(txtId.Text);
+            //chama o método que exclui da tabela usuario
+            ExcluirUsuario(idUsuario);
+            ListarUsuarios();
+            LimparCampos();
+            btnNovo.Enabled = true;
+            btnSalvar.Enabled = false;
+            btnCancelar.Enabled = false;
+            btnEditar.Enabled = false;
+            btnExcluir.Enabled = false;
+            MessageBox.Show("Usuário excluído com sucesso");
+        }
+
+        private void ExcluirUsuario(int idUsuario)
+        {
+            //conectar no banco de dados, consultar o usuario, avisar o banco que estou excluindo, confirmar exclusão
+            using (var banco = new AppDbContext())
+            {
+                var usuario = banco.Usuarios.First(u => u.Id.Equals(idUsuario));
+
+                banco.Usuarios.Remove(usuario);
+
+                banco.SaveChanges();
+            }
         }
     }
 }
