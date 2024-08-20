@@ -16,5 +16,15 @@ namespace Comandas
         {
             InitializeComponent();
         }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Load(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

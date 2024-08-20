@@ -221,7 +221,7 @@ namespace Comandas
             btnSalvar.Enabled = false;
             btnCancelar.Enabled = false;
             btnEditar.Enabled = false;
-            btnExcluir.Enabled = false;
+            btnExcluir.Enabled = false; 
             MessageBox.Show("Usuário excluído com sucesso");
         }
 
