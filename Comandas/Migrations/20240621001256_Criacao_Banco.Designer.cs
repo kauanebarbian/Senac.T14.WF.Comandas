@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Comandas.Migrations
 {
-    [DbContext(typeof(AppDbContext))]
-    [Migration("20240621001704_Criacao_Banco")]
+    [DbContext(typeof(BancoDeDados))]
+    [Migration("20240621001256_Criacao_Banco")]
     partial class Criacao_Banco
     {
         /// <inheritdoc />

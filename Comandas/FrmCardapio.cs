@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Comandas
+﻿namespace Comandas
 {
     public partial class FrmCardapio : Form
     {
@@ -19,12 +9,25 @@ namespace Comandas
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
 
-        private void btnCancelar_Load(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
-            Close();
+            var ehNovo = false;
+            new FrmCardapioCad(ehNovo).ShowDialog();
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            // criei uma variavel booleana para indicar o tipo da cad
+            var ehNovo = true;
+            new FrmCardapioCad(ehNovo).ShowDialog();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

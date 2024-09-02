@@ -1,14 +1,5 @@
-ï»¿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics.Contracts;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using Microsoft.EntityFrameworkCore;
+using System.Drawing.Drawing2D;
 
 namespace Comandas
 {
@@ -19,28 +10,52 @@ namespace Comandas
             InitializeComponent();
             CriarBancoDeDados();
         }
-
-        // mÃ©todo (visibilidade= private, retrono=void no
+        // método (visibilidade=private, retorno=void nome)
         private void CriarBancoDeDados()
         {
-            // criar uma variavel do tipo AppDbContext
-            // usar a variavel e acessar o contexto
-            // executar a migraÃ§Ã£o == F5
-            using (var banco = new AppDbContext())
+            // criar uma variavel do tipo BananaContext
+            // usar a var e acessar o contexto
+            // executar a migração == F5
+            using (var banco = new BancoDeDados())
             {
-                //executa a migraÃ§Ã£o(CREATE TABLE usuarios)
+                // executa a migração(CREATE TABLE Usuarios)
                 banco.Database.Migrate();
             }
         }
 
-        //evento de clique
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            // Define o tamanho do raio dos cantos arredondados
+            int radius = 35;
+            GraphicsPath path = new GraphicsPath();
+
+            // Cria um retângulo arredondado
+            path.AddArc(new Rectangle(0, 0, radius, radius), 180, 90);
+            path.AddArc(new Rectangle(Width - radius, 0, radius, radius), 270, 90);
+            path.AddArc(new Rectangle(Width - radius, Height - radius, radius, radius), 0, 90);
+            path.AddArc(new Rectangle(0, Height - radius, radius, radius), 90, 90);
+            path.CloseAllFigures();
+
+            // Aplica a região arredondada ao formulário
+            this.Region = new Region(path);
+        }
+
+
+        // evento de clique
         private void btnCardapio_Click(object sender, EventArgs e)
         {
-            //cria o formulario e exibe
+            // criar o formulario e exibe
             new FrmCardapio().ShowDialog();
         }
 
-        private void btnComanda_Click_1(object sender, EventArgs e)
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            new FrmUsuarios().ShowDialog();
+        }
+
+        private void btnComanda_Click(object sender, EventArgs e)
         {
             new FrmComanda().ShowDialog();
         }
@@ -50,19 +65,31 @@ namespace Comandas
             new FrmPedidoCozinha().ShowDialog();
         }
 
-        private void btnUsuarios_Click(object sender, EventArgs e)
+        private void btnSair_Click(object sender, EventArgs e)
         {
-            new FrmUsuario().ShowDialog();
+            // encerra o aplicativo
+            Application.Exit();
         }
 
-        private void FrmPrincipal_Load(object sender, EventArgs e)
+        private void cyberButton1_Click(object sender, EventArgs e)
         {
-
+            // criar o formulario e exibe
+            new FrmCardapio().ShowDialog();
         }
 
-        private void btnVoltar_Click(object sender, EventArgs e)
+        private void cyberButton2_Click(object sender, EventArgs e)
         {
-            Close();
+            new FrmComanda().ShowDialog();
+        }
+
+        private void cyberButton3_Click(object sender, EventArgs e)
+        {
+            new FrmPedidoCozinha().ShowDialog();
+        }
+
+        private void cyberButton4_Click(object sender, EventArgs e)
+        {
+            new FrmUsuarios().ShowDialog();
         }
     }
 }

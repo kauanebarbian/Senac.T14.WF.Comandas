@@ -57,12 +57,12 @@
             btnVoltar.Lighting = false;
             btnVoltar.LinearGradient_Background = false;
             btnVoltar.LinearGradientPen = false;
-            btnVoltar.Location = new Point(30, 346);
+            btnVoltar.Location = new Point(27, 388);
             btnVoltar.Name = "btnVoltar";
             btnVoltar.PenWidth = 15;
             btnVoltar.Rounding = true;
             btnVoltar.RoundingInt = 70;
-            btnVoltar.Size = new Size(195, 75);
+            btnVoltar.Size = new Size(130, 50);
             btnVoltar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             btnVoltar.TabIndex = 0;
             btnVoltar.Tag = "Cyber";
@@ -74,14 +74,14 @@
             // 
             // FrmComanda
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnVoltar);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmComanda";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmComanda";
+            Text = "Comanda";
             ResumeLayout(false);
         }
 

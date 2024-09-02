@@ -8,13 +8,38 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Comandas.Migrations
 {
-    [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(BancoDeDados))]
+    partial class BananaContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.5");
+
+            modelBuilder.Entity("Comandas.Cardapio", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("PossuiPreparo")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("Preco")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cardapios");
+                });
 
             modelBuilder.Entity("Comandas.Usuario", b =>
                 {
