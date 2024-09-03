@@ -38,6 +38,7 @@
             txtTitulo = new ReaLTaiizor.Controls.CyberTextBox();
             btnCancelar = new ReaLTaiizor.Controls.CyberButton();
             btnSalvar = new ReaLTaiizor.Controls.CyberButton();
+            txtId = new ReaLTaiizor.Controls.CyberTextBox();
             cyberGroupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -55,6 +56,7 @@
             cyberGroupBox1.ColorLighting = Color.FromArgb(29, 200, 238);
             cyberGroupBox1.ColorPen_1 = Color.FromArgb(37, 52, 68);
             cyberGroupBox1.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            cyberGroupBox1.Controls.Add(txtId);
             cyberGroupBox1.Controls.Add(crownLabel3);
             cyberGroupBox1.Controls.Add(crownLabel2);
             cyberGroupBox1.Controls.Add(crownLabel1);
@@ -229,13 +231,13 @@
             txtTitulo.ForeColor = Color.Black;
             txtTitulo.Lighting = false;
             txtTitulo.LinearGradientPen = false;
-            txtTitulo.Location = new Point(84, 50);
+            txtTitulo.Location = new Point(165, 53);
             txtTitulo.Name = "txtTitulo";
             txtTitulo.PenWidth = 15;
             txtTitulo.RGB = false;
             txtTitulo.Rounding = true;
             txtTitulo.RoundingInt = 60;
-            txtTitulo.Size = new Size(503, 40);
+            txtTitulo.Size = new Size(422, 40);
             txtTitulo.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             txtTitulo.TabIndex = 0;
             txtTitulo.Tag = "Cyber";
@@ -325,6 +327,36 @@
             btnSalvar.Timer_RGB = 300;
             btnSalvar.Click += btnSalvar_Click;
             // 
+            // txtId
+            // 
+            txtId.Alpha = 20;
+            txtId.BackColor = Color.Transparent;
+            txtId.Background_WidthPen = 3F;
+            txtId.BackgroundPen = true;
+            txtId.ColorBackground = Color.White;
+            txtId.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
+            txtId.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtId.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtId.ColorPen_2 = Color.Black;
+            txtId.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtId.Font = new Font("Arial", 10F);
+            txtId.ForeColor = Color.Black;
+            txtId.Lighting = false;
+            txtId.LinearGradientPen = false;
+            txtId.Location = new Point(70, 53);
+            txtId.Name = "txtId";
+            txtId.PenWidth = 15;
+            txtId.RGB = false;
+            txtId.Rounding = true;
+            txtId.RoundingInt = 60;
+            txtId.Size = new Size(89, 40);
+            txtId.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtId.TabIndex = 7;
+            txtId.Tag = "Cyber";
+            txtId.TextButton = "1";
+            txtId.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtId.Timer_RGB = 300;
+            // 
             // FrmCardapioCad
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -341,6 +373,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "themeForm1";
             TransparencyKey = Color.Fuchsia;
+            Load += FrmCardapioCad_Load;
             cyberGroupBox1.ResumeLayout(false);
             cyberGroupBox1.PerformLayout();
             ResumeLayout(false);
@@ -358,5 +391,6 @@
         private ReaLTaiizor.Controls.CrownLabel crownLabel1;
         private ReaLTaiizor.Controls.CyberButton btnCancelar;
         private ReaLTaiizor.Controls.CyberButton btnSalvar;
+        private ReaLTaiizor.Controls.CyberTextBox txtId;
     }
 }

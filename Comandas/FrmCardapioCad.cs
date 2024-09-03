@@ -42,7 +42,19 @@
 
         private void AtualizarCardapio()
         {
+            //conecta o banco de dados 
+            using (var banco = new BancoDeDados())
+            {
+                var cardapio = banco.Cardapios.
+                    FirstOrDefault(c => c.Id == int.Parse(txtId.TextButton));
 
+                cardapio.Titulo = txtTitulo.TextButton;
+                cardapio.Descricao = txtDescricao.TextButton;
+                cardapio.Preco = decimal.Parse(txtPreco.TextButton);
+                cardapio.PossuiPreparo = chkPreparo .Checked;
+                banco.SaveChanges();
+
+            }
         }
 
         private void AdicionarCardapio()
@@ -60,6 +72,11 @@
                 banco.Cardapios.Add(novoCardapio);
                 banco.SaveChanges();
             }
+        }
+
+        private void FrmCardapioCad_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
