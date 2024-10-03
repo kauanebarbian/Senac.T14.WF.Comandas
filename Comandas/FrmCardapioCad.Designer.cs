@@ -111,7 +111,7 @@
             crownLabel1.AutoSize = true;
             crownLabel1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             crownLabel1.ForeColor = Color.FromArgb(220, 220, 220);
-            crownLabel1.Location = new Point(84, 18);
+            crownLabel1.Location = new Point(85, 15);
             crownLabel1.Name = "crownLabel1";
             crownLabel1.Size = new Size(75, 32);
             crownLabel1.TabIndex = 4;
@@ -231,13 +231,13 @@
             txtTitulo.ForeColor = Color.Black;
             txtTitulo.Lighting = false;
             txtTitulo.LinearGradientPen = false;
-            txtTitulo.Location = new Point(165, 53);
+            txtTitulo.Location = new Point(184, 50);
             txtTitulo.Name = "txtTitulo";
             txtTitulo.PenWidth = 15;
             txtTitulo.RGB = false;
             txtTitulo.Rounding = true;
             txtTitulo.RoundingInt = 60;
-            txtTitulo.Size = new Size(422, 40);
+            txtTitulo.Size = new Size(403, 40);
             txtTitulo.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             txtTitulo.TabIndex = 0;
             txtTitulo.Tag = "Cyber";
@@ -343,13 +343,13 @@
             txtId.ForeColor = Color.Black;
             txtId.Lighting = false;
             txtId.LinearGradientPen = false;
-            txtId.Location = new Point(70, 53);
+            txtId.Location = new Point(85, 50);
             txtId.Name = "txtId";
             txtId.PenWidth = 15;
             txtId.RGB = false;
             txtId.Rounding = true;
             txtId.RoundingInt = 60;
-            txtId.Size = new Size(89, 40);
+            txtId.Size = new Size(93, 40);
             txtId.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             txtId.TabIndex = 7;
             txtId.Tag = "Cyber";
@@ -373,7 +373,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "themeForm1";
             TransparencyKey = Color.Fuchsia;
-            Load += FrmCardapioCad_Load;
             cyberGroupBox1.ResumeLayout(false);
             cyberGroupBox1.PerformLayout();
             ResumeLayout(false);
