@@ -4,6 +4,7 @@
     {   // variavel que indica se esta criando um novo cardapio
         // bool  = true, false
         bool ehNovo = false;
+        private FrmCardapio _frmCardapio;
 
         public int ID { get; }
         public string? TITULO { get; }
@@ -11,13 +12,14 @@
         public decimal PRECO { get; }
         public bool POSSUI_PREPARO { get; }
 
-        public FrmCardapioCad(bool acao)
+        public FrmCardapioCad(bool acao, FrmCardapio frmCardapio)
         {
             ehNovo = acao;
+            _frmCardapio = frmCardapio;
             InitializeComponent();
         }
 
-        public FrmCardapioCad(bool acao, int iD, string? tITULO, string? dESCRICAO, decimal pRECO, bool pOSSUI_PREPARO) : this(acao)
+        public FrmCardapioCad(bool acao, int iD, string? tITULO, string? dESCRICAO, decimal pRECO, bool pOSSUI_PREPARO, FrmCardapio frmCardapio) : this(acao, frmCardapio)
         {
             ehNovo = acao;
             InitializeComponent();
@@ -27,6 +29,21 @@
             PRECO = pRECO;
             POSSUI_PREPARO = pOSSUI_PREPARO;
             PopularCampos();
+        }
+
+        public FrmCardapioCad(bool ehNovo, int iD, string? tITULO, string? dESCRICAO, decimal pRECO, bool pOSSUI_PREPARO)
+        {
+            this.ehNovo = ehNovo;
+            ID = iD;
+            TITULO = tITULO;
+            DESCRICAO = dESCRICAO;
+            PRECO = pRECO;
+            POSSUI_PREPARO = pOSSUI_PREPARO;
+        }
+
+        public FrmCardapioCad(bool ehNovo)
+        {
+            this.ehNovo = ehNovo;
         }
 
         private void PopularCampos()
@@ -64,7 +81,9 @@
             else
             {   // Executa o método que realiza o UPDATE na tabela
                 AtualizarCardapio();
-            } // Fecha a tela atual (FrmCardapioCad)
+            } 
+            _frmCardapio.ListarCardapios();
+            // Fecha a tela atual (FrmCardapioCad)
             Close();
         }
 
